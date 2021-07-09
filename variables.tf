@@ -38,3 +38,7 @@ variable "disk_type" {
 variable "startup_script" {
   type = string
 }
+variable application_user {
+    description = "Temporary user to deploy Software"
+    default = ""
+}

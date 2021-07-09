@@ -28,6 +28,9 @@ resource "google_compute_instance" "vm_instance" {
 
   metadata_startup_script = file(var.startup_script)
 
+  metadata = {
+    ssh-keys = "${var.application_user}:${file("userkey.txt")}" 
+  }
 
   network_interface {
     network = "default"
